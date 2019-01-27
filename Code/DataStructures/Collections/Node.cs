@@ -1,4 +1,6 @@
-﻿namespace Code.DataStructures.Collections
+﻿using System;
+
+namespace Code.DataStructures.Collections
 {
     public class Node<TData>
     {
