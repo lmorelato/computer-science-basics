@@ -1,18 +1,23 @@
-﻿using System.Transactions;
-
-namespace Code.DataStructures.Collections
+﻿namespace Code.DataStructures.Collections
 {
-    public class DoubleNode<TData> : Node<TData>
+    public class DoubleNode<TData> : SingleNode<TData>
     {
-        public Node<TData> Prev;
+        public DoubleNode<TData> Prev;
 
         public DoubleNode()
         {
         }
 
-        public DoubleNode(TData data, Node<TData> next = null, Node<TData> prev = null) : base(data, next)
+        public DoubleNode(TData data, SingleNode<TData> next = null, DoubleNode<TData> prev = null) : base(data, next)
         {
             Prev = prev;
+        }
+
+        public override string ToString()
+        {
+            return (Prev != null ? Prev.Data.ToString() : "NULL") + " <-> " +
+                   "[" + (Data != null ? Data.ToString() : "NULL") + "]" + " <-> " +
+                   (Next != null ? Next.Data.ToString() : "NULL");
         }
     }
 }
