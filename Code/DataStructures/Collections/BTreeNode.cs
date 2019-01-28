@@ -4,10 +4,13 @@ namespace Code.DataStructures.Collections
 {
     public class BTreeNode<TData>
     {
+        #region properties
         public TData Data;
         public BTreeNode<TData> Left;
         public BTreeNode<TData> Right;
+        #endregion
 
+        #region ctor
         public BTreeNode()
         {
         }
@@ -18,12 +21,16 @@ namespace Code.DataStructures.Collections
             Left = left;
             Right = right;
         }
+        #endregion
 
+        #region print
         public override string ToString()
         {
-            return (Left != null ? Left.Data.ToString() : "NULL") + " <- " +
-                   "[" + (Data != null ? Data.ToString() : "NULL") + "]" + " -> " +
-                   (Right != null ? Right.Data.ToString() : "NULL");
+            return (Data != null ? Data.ToString() : "null") + ": " +
+                    (Left != null ? Left.Data.ToString() : "null") + "," +
+                    (Right != null ? Right.Data.ToString() : "null");
         }
+
+        #endregion
     }
 }

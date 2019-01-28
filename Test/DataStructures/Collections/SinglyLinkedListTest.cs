@@ -1,5 +1,4 @@
-﻿using Code.DataStructures;
-using Code.DataStructures.Collections;
+﻿using Code.DataStructures.Collections;
 using Code.Utils;
 using Xunit;
 

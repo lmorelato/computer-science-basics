@@ -160,7 +160,7 @@ namespace Code.DataStructures.Collections
             if (node.Next == null)
                 return node.Data.ToString();
 
-            // keep going...
+            // keep going...w
             var str = node.Data + " -> " + RecursivePrint(node.Next);
             return str;
         }
