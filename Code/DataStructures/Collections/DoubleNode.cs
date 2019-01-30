@@ -1,14 +1,14 @@
 ﻿namespace Code.DataStructures.Collections
 {
-    public class DoubleNode<TData> : SingleNode<TData>
+    public class DoubleNode<T> : SingleNode<T>
     {
-        public DoubleNode<TData> Prev;
+        public DoubleNode<T> Prev;
 
         public DoubleNode()
         {
         }
 
-        public DoubleNode(TData data, SingleNode<TData> next = null, DoubleNode<TData> prev = null) : base(data, next)
+        public DoubleNode(T data, SingleNode<T> next = null, DoubleNode<T> prev = null) : base(data, next)
         {
             Prev = prev;
         }

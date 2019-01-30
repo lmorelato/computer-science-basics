@@ -26,13 +26,23 @@ namespace Test.DataStructures.Collections
             Assert.Equal(expected: expected, actual: result);
         }
 
-        //[Theory]
-        //[InlineData(new[] { 1, 2, 3, 4, 5, 6 }, "\n1: 2,3\n2: 4,5\n3: 6,null")]
-        //public void Insert_WhenCalled_PrintTreeInOrder(int[] nodes, string expected)
-        //{
-        //    var tree = new BTree<int?>();
+        [Theory]
+        [InlineData(new[] { 1, 2, 3, 4, 5, 6 }, "\n4: null,null\n2: 4,5\n5: null,null\n1: 2,3\n6: null,null\n3: 6,null")]
+        public void Insert_WhenCalled_PrintTreeInOrder(int[] nodes, string expected)
+        {
+            //Arrange
+            var tree = new BTree<int?>();
 
-        //}
+            //Act
+            foreach (var node in nodes)
+                tree.Insert(node);
+
+            var result = tree.Print();
+            Output.Debug(result);
+
+            //Assert
+            Assert.Equal(expected: expected, actual: result);
+        }
 
     }
 }

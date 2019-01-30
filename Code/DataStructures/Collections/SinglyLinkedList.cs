@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Code.DataStructures.Collections
 {
-    public class SinglyLinkedList<TData>
+    public class SinglyLinkedList<T>
     {
         #region properties
 
-        public SingleNode<TData> Head { get; private set; }
+        public SingleNode<T> Head { get; private set; }
         public int Size { get; private set; } 
 
         #endregion
@@ -20,7 +20,7 @@ namespace Code.DataStructures.Collections
         {
         }
 
-        public SinglyLinkedList(SingleNode<TData> head)
+        public SinglyLinkedList(SingleNode<T> head)
         {
             Head = head;
         }
@@ -28,11 +28,11 @@ namespace Code.DataStructures.Collections
         
 
         #region insert
-        public void Insert(TData data)
+        public void Insert(T data)
         {
             Size++;
 
-            var newHead = new SingleNode<TData>(data);
+            var newHead = new SingleNode<T>(data);
             if (Head != null)
                 newHead.Next = Head;
 
@@ -40,11 +40,11 @@ namespace Code.DataStructures.Collections
         }
 
 
-        public void InsertAtEnd(TData data)
+        public void InsertAtEnd(T data)
         {
             Size++;
 
-            var newTail = new SingleNode<TData>(data);
+            var newTail = new SingleNode<T>(data);
             newTail.Next = null;
 
             // empty list
@@ -62,11 +62,11 @@ namespace Code.DataStructures.Collections
             tail.Next = newTail;
         }
 
-        public void InsertAfter(TData searchData, TData newData)
+        public void InsertAfter(T searchData, T newData)
         {
             Size++;
 
-            var newNode = new SingleNode<TData>(newData);
+            var newNode = new SingleNode<T>(newData);
             newNode.Next = null;
 
             // empty list
@@ -80,7 +80,7 @@ namespace Code.DataStructures.Collections
             var searchNode = Head;
             while (searchNode != null)
             {
-                if (EqualityComparer<TData>.Default.Equals(searchData, searchNode.Data))
+                if (EqualityComparer<T>.Default.Equals(searchData, searchNode.Data))
                 {
                     newNode.Next = searchNode.Next;
                     searchNode.Next = newNode;
@@ -95,11 +95,11 @@ namespace Code.DataStructures.Collections
         }
 
 
-        public void InsertBefore(TData searchData, TData newData)
+        public void InsertBefore(T searchData, T newData)
         {
             Size++;
 
-            var newNode = new SingleNode<TData>(newData);
+            var newNode = new SingleNode<T>(newData);
             newNode.Next = null;
 
             // empty list
@@ -111,7 +111,7 @@ namespace Code.DataStructures.Collections
 
             // searching the curr
             var searchNode = Head;
-            var previousNode = new SingleNode<TData>();
+            var previousNode = new SingleNode<T>();
             while (searchNode != null)
             {
                 if (searchData.Equals(searchNode.Data))
@@ -151,7 +151,7 @@ namespace Code.DataStructures.Collections
             return sb.ToString();
         }
 
-        public string RecursivePrint(SingleNode<TData> node = null)
+        public string RecursivePrint(SingleNode<T> node = null)
         {
             if (Head == null) return "";
             if (node == null) node = Head;
@@ -166,7 +166,7 @@ namespace Code.DataStructures.Collections
         }
 
 
-        public string RecursivePrintReverse(SingleNode<TData> node = null)
+        public string RecursivePrintReverse(SingleNode<T> node = null)
         {
             if (Head == null) return "";
             if (node == null) node = Head;
@@ -188,7 +188,7 @@ namespace Code.DataStructures.Collections
         /// </summary>
         /// <param name="curr">current curr</param>
         /// <returns>tail curr</returns>
-        public SingleNode<TData> RecursiveReverseOne(SingleNode<TData> curr = null)
+        public SingleNode<T> RecursiveReverseOne(SingleNode<T> curr = null)
         {
             // list validation
             if (Head == null) return null;
@@ -216,7 +216,7 @@ namespace Code.DataStructures.Collections
         /// <param name="curr">current curr</param>
         /// <param name="previous">previous curr</param>
         /// <returns>head curr</returns>
-        public SingleNode<TData> RecursiveReverseTwo(SingleNode<TData> curr = null, SingleNode<TData> previous = null)
+        public SingleNode<T> RecursiveReverseTwo(SingleNode<T> curr = null, SingleNode<T> previous = null)
         {
             // list validation
             if (Head == null) return null;

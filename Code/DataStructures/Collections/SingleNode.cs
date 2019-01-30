@@ -2,16 +2,16 @@
 
 namespace Code.DataStructures.Collections
 {
-    public class SingleNode<TData>
+    public class SingleNode<T>
     {
-        public TData Data;
-        public SingleNode<TData> Next;
+        public T Data;
+        public SingleNode<T> Next;
 
         public SingleNode()
         {
         }
 
-        public SingleNode(TData data, SingleNode<TData> next = null)
+        public SingleNode(T data, SingleNode<T> next = null)
         {
             Data = data;
             Next = next;

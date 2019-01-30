@@ -3,9 +3,9 @@ using Code.DataStructures.Collections;
 
 namespace Code.Utils
 {
-    public static class NodeUtils<TData>
+    public static class NodeUtils<T>
     {
-        public static void ThrowIfNull(SingleNode<TData> node)
+        public static void ThrowIfNull(SingleNode<T> node)
         {
             if (node == null) throw new NullReferenceException();
         }

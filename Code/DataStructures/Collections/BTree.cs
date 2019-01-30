@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Code.Utils;
 
 namespace Code.DataStructures.Collections
 {
@@ -15,9 +13,9 @@ namespace Code.DataStructures.Collections
         #region ctor
         public BTree() { }
 
-        public BTree(T rootData)
+        public BTree(T rooT)
         {
-            Root = new BTreeNode<T>(rootData);
+            Root = new BTreeNode<T>(rooT);
         }
 
         public BTree(BTreeNode<T> root)
@@ -102,8 +100,7 @@ namespace Code.DataStructures.Collections
             var queue = new Queue<BTreeNode<T>>();
             queue.Enqueue(tempRoot);
 
-            // Do level order traversal until we find 
-            // an empty place.  
+            // do level order traversal until we find an empty place
             while (queue.Count != 0)
             {
                 tempRoot = queue.Peek();

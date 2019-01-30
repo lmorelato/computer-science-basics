@@ -2,12 +2,12 @@
 
 namespace Code.DataStructures.Collections
 {
-    public class BTreeNode<TData>
+    public class BTreeNode<T>
     {
         #region properties
-        public TData Data;
-        public BTreeNode<TData> Left;
-        public BTreeNode<TData> Right;
+        public T Data;
+        public BTreeNode<T> Left;
+        public BTreeNode<T> Right;
         #endregion
 
         #region ctor
@@ -15,7 +15,7 @@ namespace Code.DataStructures.Collections
         {
         }
 
-        public BTreeNode(TData data, BTreeNode<TData> left = null, BTreeNode<TData> right = null)
+        public BTreeNode(T data, BTreeNode<T> left = null, BTreeNode<T> right = null)
         {
             Data = data;
             Left = left;
