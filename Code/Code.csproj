@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DataStructures\Algorithms\" />
+    <Folder Include="Algorithms\" />
   </ItemGroup>
 
 </Project>
