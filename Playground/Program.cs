@@ -7,11 +7,21 @@ namespace Playground
     {
         private static void Main()
         {
-            int[,] m = { { 1, 2, 3 }, { 1, 2, 3 }, { 1, 2, 3 } };
+            int[,] x = {{ 101, 102, 103, 104, 105 },
+                        { 106, 107, 108, 109, 110 },
+                        { 111, 112, 113, 114, 115 },
+                        { 116, 117, 118, 119, 120 },
+                        { 121, 122, 123, 124, 125 }};
 
-            Console.WriteLine(Matrix.Log(m));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(m)));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(m)));
+            int [,] y = {
+                { 101, 102, 103, 104},
+                { 105, 106, 107, 108},
+                { 109, 110, 111, 112},
+                { 113, 114, 115, 116}};
+
+            Console.WriteLine(Matrix.Log(y));
+            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(x)));
+            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(x)));
 
             var a = 10;
             var b = 5;

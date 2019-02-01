@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Code.Arrays.Exercises
@@ -30,8 +31,8 @@ namespace Code.Arrays.Exercises
         }
 
         /// <summary>
-        /// time complexity = O(n^2)
-        /// space complexity = O(n)
+        /// time complexity = O(n)
+        /// space complexity = O(1)
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
@@ -44,14 +45,18 @@ namespace Code.Arrays.Exercises
             if (n == 0) throw new ArgumentException("empty matrix!");
             if (n != m) throw new ArgumentException("must be a square matrix!");
 
-            var temp = 0;
+            var length = n - 1;
+            int temp;
 
             for (var i = 0; i < n / 2; i++)
             {
-                for (var j = 0; j < n - 1; j++)
+                for (var j = i; j < length - i; j++)
                 {
                     temp = matrix[i, j];
-                    matrix[i,j] = 
+                    matrix[i, j] = matrix[length - j, i];
+                    matrix[length - j, i] = matrix[length - i, length - j];
+                    matrix[length - i, length - j] = matrix[j, length - i];
+                    matrix[j, length - i] = temp;
                 }
             }
 
