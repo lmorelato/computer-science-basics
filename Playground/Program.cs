@@ -7,23 +7,38 @@ namespace Playground
     {
         private static void Main()
         {
-            int[,] x = {{ 101, 102, 103, 104, 105 },
-                        { 106, 107, 108, 109, 110 },
-                        { 111, 112, 113, 114, 115 },
-                        { 116, 117, 118, 119, 120 },
-                        { 121, 122, 123, 124, 125 }};
+            var a = new[] { 1, -2, 1, 0, 5 };
 
-            int [,] y = {
-                { 101, 102, 103, 104},
-                { 105, 106, 107, 108},
-                { 109, 110, 111, 112},
-                { 113, 114, 115, 116}};
+            for (var i = 0; i < a.Length - 2; i++)
+            {
+                for (var j = i + 1; j < a.Length - 1; j++)
+                {
+                    for (var k = j + 1; k < a.Length; k++)
+                    {
+                        if (a[i] + a[j] + a[k] == 6)
+                            Console.WriteLine($"{a[i]} {a[j]} {a[k]}");
+                    }
+                }
+            }
 
-            Console.WriteLine(Matrix.Log(y));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(x)));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(x)));
 
-            var a = 10;
+            //int[,] x = {{ 101, 102, 103, 104, 105 },
+            //            { 106, 107, 108, 109, 110 },
+            //            { 111, 112, 113, 114, 115 },
+            //            { 116, 117, 118, 119, 120 },
+            //            { 121, 122, 123, 124, 125 }};
+
+            //int [,] y = {
+            //    { 101, 102, 103, 104},
+            //    { 105, 106, 107, 108},
+            //    { 109, 110, 111, 112},
+            //    { 113, 114, 115, 116}};
+
+            //Console.WriteLine(Matrix.Log(y));
+            //Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(x)));
+            //Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(x)));
+
+            //var a = 10;
             var b = 5;
 
             //Console.WriteLine("a = " + a);
