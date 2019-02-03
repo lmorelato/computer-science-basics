@@ -20,8 +20,8 @@ namespace Playground
                 { 113, 114, 115, 116}};
 
             Console.WriteLine(Matrix.Log(y));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(x)));
-            Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(x)));
+            Console.WriteLine(Matrix.Log(Matrix.RotateSquareMatrixAndReturnNew(x)));
+            Console.WriteLine(Matrix.Log(Matrix.RotateSquareMatrix(x)));
 
             var a = 10;
             var b = 5;

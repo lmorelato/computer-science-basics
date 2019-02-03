@@ -12,13 +12,13 @@ namespace Code.Arrays.Exercises
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static int[,] RotateNxN_v0(int[,] matrix)
+        public static int[,] RotateSquareMatrixAndReturnNew(int[,] matrix)
         {
             // validations
             var n = matrix.GetLength(0);
-            var m = matrix.GetLength(1);
-
             if (n == 0) throw new ArgumentException("empty matrix!");
+
+            var m = matrix.GetLength(1);
             if (n != m) throw new ArgumentException("must be a square matrix!");
 
             var result = new int[n, n];
@@ -36,13 +36,13 @@ namespace Code.Arrays.Exercises
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static int[,] RotateNxN_v1(int[,] matrix)
+        public static void RotateSquareMatrix(int[,] matrix)
         {
             // validations
             var n = matrix.GetLength(0);
-            var m = matrix.GetLength(1);
-
             if (n == 0) throw new ArgumentException("empty matrix!");
+
+            var m = matrix.GetLength(1);
             if (n != m) throw new ArgumentException("must be a square matrix!");
 
             var length = n - 1;
@@ -53,14 +53,20 @@ namespace Code.Arrays.Exercises
                 for (var j = i; j < length - i; j++)
                 {
                     temp = matrix[i, j];
+
+                    // top-left <== bottom-left
                     matrix[i, j] = matrix[length - j, i];
+
+                    // bottom-left <== bottom-right
                     matrix[length - j, i] = matrix[length - i, length - j];
+
+                    // bottom-right <== top-right
                     matrix[length - i, length - j] = matrix[j, length - i];
+
+                    // top-left <== top-left
                     matrix[j, length - i] = temp;
                 }
             }
-
-            return matrix;
         }
 
         public static string Log(int[,] matrix)
