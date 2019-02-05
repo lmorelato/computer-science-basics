@@ -1,4 +1,4 @@
-﻿namespace Code.DataStructures.Collections
+﻿namespace Code.DataStructures.Core
 {
     public class DoubleNode<T> : SingleNode<T>
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-using Code.DataStructures.Collections;
+using Code.DataStructures.Core;
 
 namespace Code.Utils
 {

@@ -19,4 +19,10 @@
     <ProjectReference Include="..\Code\Code.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Algorithms\Searching\" />
+    <Folder Include="Algorithms\Sorting\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
 </Project>

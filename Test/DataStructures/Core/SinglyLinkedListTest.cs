@@ -1,8 +1,8 @@
-﻿using Code.DataStructures.Collections;
+﻿using Code.DataStructures.Core;
 using Code.Utils;
 using Xunit;
 
-namespace Test.DataStructures.Collections
+namespace Test.DataStructures.Core
 {
     public class SinglyLinkedListTest
     {
@@ -16,7 +16,7 @@ namespace Test.DataStructures.Collections
 
             //Act
             var result = list.ToString();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "1 -> 2", actual: result);
@@ -30,12 +30,12 @@ namespace Test.DataStructures.Collections
             list.Insert(3);
             list.Insert(2);
             list.Insert(1);
-            Output.Debug(list.ToString());
+            Logger.Debug(list.ToString());
 
             //Act
             list.RecursiveReverseOne();
             var result = list.ToString();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "3 -> 2 -> 1", actual: result);
@@ -51,7 +51,7 @@ namespace Test.DataStructures.Collections
 
             //Act
             var result = list.RecursivePrint();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "1 -> 2", actual: result);
@@ -67,7 +67,7 @@ namespace Test.DataStructures.Collections
 
             //Act
             var result = list.RecursivePrintReverse();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "2 -> 1", actual: result);
@@ -83,7 +83,7 @@ namespace Test.DataStructures.Collections
 
             //Act
             var result = list.RecursivePrint();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "1 -> 2", actual: result);
@@ -99,7 +99,7 @@ namespace Test.DataStructures.Collections
 
             //Act
             var result = list.RecursivePrint();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: "1 -> 2", actual: result);
@@ -120,12 +120,12 @@ namespace Test.DataStructures.Collections
             foreach (var i in extraData)
             {
                 list.InsertAfter(insertAfter, i);
-                Output.Debug(list.ToString());
+                Logger.Debug(list.ToString());
             }
 
             //Act
             var result = list.RecursivePrint();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: expectedResult, actual: result);
@@ -146,12 +146,12 @@ namespace Test.DataStructures.Collections
             foreach (var i in extraData)
             {
                 list.InsertBefore(insertBefore, i);
-                Output.Debug(list.ToString());
+                Logger.Debug(list.ToString());
             }
 
             //Act
             var result = list.RecursivePrint();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: expectedResult, actual: result);

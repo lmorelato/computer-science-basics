@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Code.DataStructures.Collections
+namespace Code.DataStructures.Core
 {
     public class BTree<T>
     {

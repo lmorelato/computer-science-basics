@@ -1,5 +1,9 @@
-﻿using Code.Arrays.Exercises;
-using System;
+﻿using System;
+using Code.Algorithms.Sorting;
+using Code.DataStructures.Exercises;
+using Code.Algorithms.String;
+using Code.Utils;
+
 
 namespace Playground
 {
@@ -7,19 +11,20 @@ namespace Playground
     {
         private static void Main()
         {
-            var a = new[] { 1, -2, 1, 0, 5 };
+            var qs = new[] { 4, 5, 0, 3, 1, 2 };
+            Logger.Debug(Logger.ToString(qs));
+            QuickSort.Perform(qs);
+            Logger.Debug(Logger.ToString(qs));
 
-            for (var i = 0; i < a.Length - 2; i++)
-            {
-                for (var j = i + 1; j < a.Length - 1; j++)
-                {
-                    for (var k = j + 1; k < a.Length; k++)
-                    {
-                        if (a[i] + a[j] + a[k] == 6)
-                            Console.WriteLine($"{a[i]} {a[j]} {a[k]}");
-                    }
-                }
-            }
+
+            //var buble = new []{1, 0, 2, 4};
+            //BubleSort.PerformV2(buble);
+
+
+
+            //var word = "ABB";
+            //Strings.Permute(word, 0, word.Length - 1);
+
 
 
             //int[,] x = {{ 101, 102, 103, 104, 105 },
@@ -34,12 +39,14 @@ namespace Playground
             //    { 109, 110, 111, 112},
             //    { 113, 114, 115, 116}};
 
-            //Console.WriteLine(Matrix.Log(y));
-            //Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v0(x)));
-            //Console.WriteLine(Matrix.Log(Matrix.RotateNxN_v1(x)));
+            //Console.WriteLine(Matrices.Log(y));
+            //Console.WriteLine(Matrices.Log(Matrices.RotateNxN_v0(x)));
+            //Console.WriteLine(Matrices.Log(Matrices.RotateNxN_v1(x)));
+
+
 
             //var a = 10;
-            var b = 5;
+            //var b = 5;
 
             //Console.WriteLine("a = " + a);
             //Console.WriteLine("b = " + b);
@@ -83,10 +90,8 @@ namespace Playground
             //var x = 28;
             //x = x >> 2;
             //Console.WriteLine("x =" + x);
-        }
-    }
 
-    class ProgramImpl : Program
-    {
+            Console.ReadLine();
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Code.DataStructures.Collections
+﻿namespace Code.DataStructures.Core
 {
     public class SingleNode<T>
     {

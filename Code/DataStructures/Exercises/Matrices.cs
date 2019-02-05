@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Code.Arrays.Exercises
+namespace Code.DataStructures.Exercises
 {
-    public static class Matrix
+    public static class Matrices
     {
         /// <summary>
         /// time complexity = O(n^2)
@@ -12,7 +11,7 @@ namespace Code.Arrays.Exercises
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static int[,] RotateSquareMatrixAndReturnNew(int[,] matrix)
+        public static int[,] RotateSquareMatrixV1(int[,] matrix)
         {
             // validations
             var n = matrix.GetLength(0);
@@ -36,7 +35,7 @@ namespace Code.Arrays.Exercises
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static void RotateSquareMatrix(int[,] matrix)
+        public static void RotateSquareMatrixV2(int[,] matrix)
         {
             // validations
             var n = matrix.GetLength(0);

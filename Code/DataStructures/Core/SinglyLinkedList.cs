@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Code.DataStructures.Collections
+namespace Code.DataStructures.Core
 {
     public class SinglyLinkedList<T>
     {

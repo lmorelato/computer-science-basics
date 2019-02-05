@@ -1,8 +1,8 @@
-﻿using Code.DataStructures.Collections;
+﻿using Code.DataStructures.Core;
 using Code.Utils;
 using Xunit;
 
-namespace Test.DataStructures.Collections
+namespace Test.DataStructures.Core
 {
     public class BTreeTest
     {
@@ -16,11 +16,11 @@ namespace Test.DataStructures.Collections
             var tree = new BTree<int?>(1);
             tree.Root.Left = new BTreeNode<int?>(2);
             tree.Root.Right = new BTreeNode<int?>(3);
-            Output.Debug(mode.ToString());
+            Logger.Debug(mode.ToString());
 
             //Act
             var result = tree.Print(mode);
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: expected, actual: result);
@@ -38,7 +38,7 @@ namespace Test.DataStructures.Collections
                 tree.Insert(node);
 
             var result = tree.Print();
-            Output.Debug(result);
+            Logger.Debug(result);
 
             //Assert
             Assert.Equal(expected: expected, actual: result);

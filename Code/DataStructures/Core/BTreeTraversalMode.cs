@@ -1,5 +1,5 @@
 ﻿
-namespace Code.DataStructures.Collections
+namespace Code.DataStructures.Core
 {
     public enum BTreeTraversalMode
     {

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Code.DataStructures.Collections
+namespace Code.DataStructures.Core
 {
     public class GraphNode<T>
     {
         #region properties
         public T Data;
-        public List<GraphNode<T>> children = new List<GraphNode<T>>();
+        public List<GraphNode<T>> Children = new List<GraphNode<T>>();
         #endregion
 
         #region ctor
