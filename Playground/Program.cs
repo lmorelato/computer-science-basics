@@ -7,10 +7,12 @@ using Code.Utils;
 
 namespace Playground
 {
+
     class Program
     {
         private static void Main()
         {
+
             var qs = new[] { 4, 5, 0, 3, 1, 2 };
             Logger.Debug(Logger.ToString(qs));
             QuickSort.Perform(qs);
